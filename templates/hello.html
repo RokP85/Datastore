@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block izpis %}
+<form method="post" action="/izpis">
+    <p>Name (not obligatory), type "unknown" if annonime</p>
+    <input name="ime">
+    <p>Surname (not obligatory), type "unknown" in annonime</p>
+    <input name="priimek">
+    <p>Email (not obligatoy)</p>
+    <input name="email">
+    <p>Message (obligatory)</p>
+    <input name="sporocilo">
+    <br>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

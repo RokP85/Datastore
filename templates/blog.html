@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block vsebina %}
+    <h1>Blog</h1>
+
+    <p>{{vnosi }}</p>
+
+    <ol>
+    {% for nov_komentar in komentarji %}
+        <li><a href="/podrobnosti/{{ vnos.key.id() }}">{{ nov_komentar.nov_komentar }}</a> -
+            {% if nov_komentar.nastanek != None %}
+
+            {{ nov_komentar.nastanek }}
+        </li>
+        {% endif %}
+    {% endfor %}
+    </ol>
+{% endblock %}
+

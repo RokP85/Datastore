@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block izpis %}
+
+<ol>
+
+    {% for Sporocilo in vnosi %}
+    <li>
+    {% if not Sporocilo.ime %}
+    {{"unknown person", Sporocilo.nastanek}}
+    {% else %}
+    <a href="/podrobnosti/{{ Sporocilo.key.id() }}">{{Sporocilo.ime}}</a>
+        <br>
+    {{Sporocilo.priimek}}
+        <br>
+    {{Sporocilo.email}}
+        <br>
+    {{Sporocilo.sporocilo}}
+        <br>
+    {{Sporocilo.nastanek}}
+    {% endif %}
+{% endfor %}
+    </li>
+</ol>
+{% endblock %}
